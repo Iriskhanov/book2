@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Create book</title>
+</head>
+<body>
+ <h1>Create book</h1>
+ <form class="post" method="post"> {% csrf_token %}
+  <label class="book_label" for="name-author">Автор</label>
+   <input name="author" type="text" id="name-author" placeholder="Введите автора"></input>
+  
+  <label class="book_label" for="name-title">Название</label>
+   <input name="name" type="text" id="name-title" placeholder="Введите название"></input>
+  
+  <label class="book_label" for="name-title">Обложка</label>
+   <input name="image" type="file" placeholder="Обложка"></input>
+  
+  <button class="book_label book_button" type="submit">Создать книгу</button>
+ </form>
+ <style>
+  .post {
+   min-height: 180px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  }
+  .book_label {
+   display: flex;
+  }
+  .book_button {
+   max-width: 115px;
+  }
+ </style>
+</body>
+</html>
