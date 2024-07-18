@@ -12,7 +12,7 @@ def create(request):
     if request.POST:
         name = request.POST.get('name')
         author = request.POST.get('author')
-        image = request.POST.get('image')
+        image = request.FILES.get('image')
         book = Book(name=name, author=author, image=image)
         book.save()
         return redirect ('home')

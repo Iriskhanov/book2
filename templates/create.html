@@ -8,16 +8,20 @@
 </head>
 <body>
  <h1>Create book</h1>
- <form class="post" method="post"> {% csrf_token %}
+ <form class="post" enctype="multipart/form-data" method="post">
+  {% csrf_token %}
   <label class="book_label" for="name-author">Автор</label>
-   <input name="author" type="text" id="name-author" placeholder="Введите автора"></input>
+  <input name="author" type="text" id="name-author" placeholder="Введите автора"></input>
   
   <label class="book_label" for="name-title">Название</label>
-   <input name="name" type="text" id="name-title" placeholder="Введите название"></input>
+  <input name="name" type="text" id="name-title" placeholder="Введите название"></input>
   
-  <label class="book_label" for="name-title">Обложка</label>
-   <input name="image" type="file" placeholder="Обложка"></input>
+  <!--<label class="book_label" for="name-title">Обложка</label>
+   <input name="image" type="file" id="image" placeholder="Обложка"></input>-->
   
+
+  <label class="book_label" for="file">Обложка</label>
+  <input type="file" id="file" name="image" accept="image/png, image/jpg" multiple></input>
   <button class="book_label book_button" type="submit">Создать книгу</button>
  </form>
  <style>

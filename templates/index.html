@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8">
@@ -10,12 +10,12 @@
 </head>
 <body>
  <h1>Book List</h1>
- 
   <ul>
    {% for book in books %}
-   <li><img src="{%static 'images/image.jpg'%}" alt="My image"> <br> {{book.name}} <br> автор: {{book.author}}</li>
+   <li><img src="{{book.image}}"> <br> {{book.name}} <br> автор: {{book.author}}</li> 
    {% endfor %}
   </ul>
+  <a href="{%url 'create' %}">Create new book</a>
   <style>
    li {
     list-style-type: none;
